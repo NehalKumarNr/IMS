@@ -1,0 +1,127 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-09-16 18:01:39.997093",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "disabled",
+  "warehouse_name",
+  "section_break_sc5zr",
+  "is_group_warehouse",
+  "parent_warehouse",
+  "column_break_ojeve",
+  "company",
+  "section_break_7wtlb",
+  "lft",
+  "rgt",
+  "is_group",
+  "old_parent",
+  "parent_ims_warehouse"
+ ],
+ "fields": [
+  {
+   "fieldname": "warehouse_name",
+   "fieldtype": "Data",
+   "label": "Warehouse Name"
+  },
+  {
+   "default": "0",
+   "fieldname": "disabled",
+   "fieldtype": "Check",
+   "label": "Disabled"
+  },
+  {
+   "fieldname": "lft",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Left",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "rgt",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Right",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_group",
+   "fieldtype": "Check",
+   "label": "Is Group"
+  },
+  {
+   "fieldname": "old_parent",
+   "fieldtype": "Link",
+   "label": "Old Parent",
+   "options": "IMS Warehouse"
+  },
+  {
+   "fieldname": "parent_ims_warehouse",
+   "fieldtype": "Link",
+   "label": "Parent IMS Warehouse",
+   "options": "IMS Warehouse"
+  },
+  {
+   "fieldname": "section_break_sc5zr",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_group_warehouse",
+   "fieldtype": "Check",
+   "label": "Is Group Warehouse"
+  },
+  {
+   "fieldname": "parent_warehouse",
+   "fieldtype": "Link",
+   "label": "Parent Warehouse",
+   "options": "IMS Warehouse"
+  },
+  {
+   "fieldname": "section_break_7wtlb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_ojeve",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "IMS Company"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_tree": 1,
+ "links": [],
+ "modified": "2024-09-16 19:01:39.893126",
+ "modified_by": "Administrator",
+ "module": "Inventory Management System",
+ "name": "IMS Warehouse",
+ "nsm_parent_field": "parent_ims_warehouse",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
