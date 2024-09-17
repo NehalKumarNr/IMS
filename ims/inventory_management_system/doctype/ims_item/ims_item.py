@@ -63,7 +63,8 @@ class IMSItem(Document):
                         "target_warehouse": warehouse,
                         "item_code": self.name,
                         "qty": self.opening_stock,
-                        "rate": self.valuation_rate or self.standard_rate
+                        "rate": self.valuation_rate or self.standard_rate,
+                        "total_amount": self.opening_stock * (self.valuation_rate or self.standard_rate)
                     }
                 ]
             })
