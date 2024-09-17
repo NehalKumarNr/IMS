@@ -213,3 +213,6 @@ app_license = "MIT"
 # auth_hooks = [
 # 	"ims.auth.validate"
 # ]
+# fixtures = [
+#     {"dt": "IMS UOM"},
+#  ]
