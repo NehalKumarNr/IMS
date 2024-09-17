@@ -15,4 +15,21 @@ class IMSStockEntry(Document):
 		self.total_amount = total_amount
 		self.qty = total_qty
 
+	def validate(self):
+		self.validate_duplicate_data()
+
+	def validate_duplicate_data(self):
+		items_table = self.get('items')
+		index = 1
+		if self.stock_entry_type=="Material Transfer":
+			for record in items_table:
+				s_warehouse = record.source_warehouse
+				t_warehouse = record.target_warehouse
+				if s_warehouse == t_warehouse:
+					frappe.throw("<b>Source Warehouse</b> & <b>Target Warehouse</b> in row no. {0} can not be same.".format(index))
+				index = index + 1
+		if self.stock_entry_type=="Material Issue":
+			for record in items_table:
+				if record.source_warehouse:
+					frappe.throw("The <b>Source Warehouse</b> field must be left blank when performing a Material Issue.")
 
