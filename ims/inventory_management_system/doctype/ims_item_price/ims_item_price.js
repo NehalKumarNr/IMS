@@ -2,7 +2,13 @@
 // For license information, please see license.txt
 
 frappe.ui.form.on('IMS Item Price', {
-	// refresh: function(frm) {
-
-	// }
+	setup(frm) {
+		frm.set_query("item_code", function() {
+			return {
+				filters: {
+					"disabled": 0
+				}
+			};
+		});
+	}
 });

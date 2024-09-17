@@ -65,9 +65,11 @@
    "default": "1",
    "fieldname": "maintain_stock",
    "fieldtype": "Check",
-   "label": "Maintain Stock"
+   "label": "Maintain Stock",
+   "read_only_depends_on": "eval:!doc.__islocal"
   },
   {
+   "depends_on": "eval:(doc.__islocal&&doc.maintain_stock)",
    "fieldname": "opening_stock",
    "fieldtype": "Float",
    "label": "Opening Stock"
@@ -88,6 +90,7 @@
    "label": "Description"
   },
   {
+   "depends_on": "eval:doc.__islocal",
    "fieldname": "standard_rate",
    "fieldtype": "Currency",
    "label": "Standard Rate"
@@ -95,7 +98,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-17 09:38:33.869168",
+ "modified": "2024-09-17 13:33:38.751635",
  "modified_by": "Administrator",
  "module": "Inventory Management System",
  "name": "IMS Item",

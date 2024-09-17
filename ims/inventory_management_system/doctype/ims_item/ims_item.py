@@ -30,19 +30,20 @@ class IMSItem(Document):
 
     def item_price_list_created(self):
         price_list = frappe.db.get_single_value('IMS Setting', 'price_list')
-        if price_list:
-            item_price = frappe.get_doc(
-                {
-                    "doctype": "IMS Item Price",
-                    "price_list": price_list,
-                    "item_code": self.name,
-                    "uom": self.uom,
-                    "rate": self.standard_rate,
-                }
-            )
-            item_price.insert()
-        else:
-            frappe.throw("Select Price list in IMS setting")
+        if self.disabled==0:
+            if price_list:
+                item_price = frappe.get_doc(
+                    {
+                        "doctype": "IMS Item Price",
+                        "price_list": price_list,
+                        "item_code": self.name,
+                        "uom": self.uom,
+                        "rate": self.standard_rate,
+                    }
+                )
+                item_price.insert()
+            else:
+                frappe.throw("Select Price list in IMS setting")
 
     def create_opening_stock(self):
         if not self.maintain_stock:
@@ -51,25 +52,26 @@ class IMSItem(Document):
         if not self.valuation_rate and not self.standard_rate:
             frappe.throw(_("Valuation Rate or Standard Rate is mandatory if Opening Stock entered"))
 
-        warehouse = frappe.db.get_single_value('IMS Setting', 'default_warehouse')
-        if warehouse:
-            stock_entry = frappe.get_doc({
-                "doctype": "IMS Stock Entry",
-                "stock_entry_type": "Material Issue",
-                "posting_date": getdate(),
-                "posting_time": nowtime(),
-                "items": [
-                    {
-                        "target_warehouse": warehouse,
-                        "item_code": self.name,
-                        "qty": self.opening_stock,
-                        "rate": self.valuation_rate or self.standard_rate,
-                        "total_amount": self.opening_stock * (self.valuation_rate or self.standard_rate)
-                    }
-                ]
-            })
-            stock_entry.insert()
-            stock_entry.submit()
-        else:
-            frappe.throw("Select Warehouse in IMS setting")
+        if self.disabled==0:
+            warehouse = frappe.db.get_single_value('IMS Setting', 'default_warehouse')
+            if warehouse:
+                stock_entry = frappe.get_doc({
+                    "doctype": "IMS Stock Entry",
+                    "stock_entry_type": "Material Issue",
+                    "posting_date": getdate(),
+                    "posting_time": nowtime(),
+                    "items": [
+                        {
+                            "target_warehouse": warehouse,
+                            "item_code": self.name,
+                            "qty": self.opening_stock,
+                            "rate": self.valuation_rate or self.standard_rate,
+                            "total_amount": self.opening_stock * (self.valuation_rate or self.standard_rate)
+                        }
+                    ]
+                })
+                stock_entry.insert()
+                stock_entry.submit()
+            else:
+                frappe.throw("Select Warehouse in IMS setting")
     

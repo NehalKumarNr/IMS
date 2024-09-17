@@ -33,9 +33,11 @@
    "reqd": 1
   },
   {
+   "fetch_from": "item_code.uom",
    "fieldname": "uom",
    "fieldtype": "Data",
-   "label": "UOM"
+   "label": "UOM",
+   "read_only": 1
   },
   {
    "fieldname": "price_list_section",
@@ -61,7 +63,7 @@
   },
   {
    "fieldname": "rate",
-   "fieldtype": "Data",
+   "fieldtype": "Currency",
    "label": "Rate"
   },
   {
@@ -103,7 +105,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-17 10:07:48.352957",
+ "modified": "2024-09-17 13:38:43.238383",
  "modified_by": "Administrator",
  "module": "Inventory Management System",
  "name": "IMS Item Price",
