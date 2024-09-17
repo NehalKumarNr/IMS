@@ -51,6 +51,7 @@
    "in_list_view": 1,
    "label": "UOM",
    "options": "IMS UOM",
+   "read_only": 1,
    "reqd": 1
   },
   {
@@ -100,7 +101,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-17 14:01:01.256251",
+ "modified": "2024-09-17 15:23:20.551027",
  "modified_by": "Administrator",
  "module": "Inventory Management System",
  "name": "IMS Item",

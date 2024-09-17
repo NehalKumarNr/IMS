@@ -24,12 +24,13 @@
    "fieldname": "uom",
    "fieldtype": "Link",
    "label": "UOM",
-   "options": "IMS UOM"
+   "options": "IMS UOM",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-17 14:00:32.052422",
+ "modified": "2024-09-17 15:22:25.207793",
  "modified_by": "Administrator",
  "module": "Inventory Management System",
  "name": "IMS Item Group",
