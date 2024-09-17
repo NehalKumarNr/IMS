@@ -8,7 +8,8 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "item_group_name"
+  "item_group_name",
+  "uom"
  ],
  "fields": [
   {
@@ -18,11 +19,17 @@
    "label": "Item Group Name",
    "reqd": 1,
    "unique": 1
+  },
+  {
+   "fieldname": "uom",
+   "fieldtype": "Link",
+   "label": "UOM",
+   "options": "IMS UOM"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-17 09:32:38.460363",
+ "modified": "2024-09-17 14:00:32.052422",
  "modified_by": "Administrator",
  "module": "Inventory Management System",
  "name": "IMS Item Group",

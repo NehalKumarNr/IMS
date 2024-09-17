@@ -45,6 +45,7 @@
    "reqd": 1
   },
   {
+   "fetch_from": "item_group.uom",
    "fieldname": "uom",
    "fieldtype": "Link",
    "in_list_view": 1,
@@ -99,7 +100,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-17 13:53:39.539139",
+ "modified": "2024-09-17 14:01:01.256251",
  "modified_by": "Administrator",
  "module": "Inventory Management System",
  "name": "IMS Item",
