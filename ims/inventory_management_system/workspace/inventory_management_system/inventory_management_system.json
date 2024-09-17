@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"EL4sfqQaQ8\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Inventory Management System</span>\",\"col\":12}},{\"id\":\"7KSIbZNNEi\",\"type\":\"card\",\"data\":{\"card_name\":\"Master\",\"col\":4}},{\"id\":\"e2kDAJzSMC\",\"type\":\"card\",\"data\":{\"card_name\":\"Warehouse\",\"col\":4}},{\"id\":\"pkp1C4DknL\",\"type\":\"card\",\"data\":{\"card_name\":\"Transaction\",\"col\":4}},{\"id\":\"grGIQKk3yK\",\"type\":\"card\",\"data\":{\"card_name\":\"Setting\",\"col\":4}}]",
+ "content": "[{\"id\":\"EL4sfqQaQ8\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Inventory Management System</span>\",\"col\":12}},{\"id\":\"7KSIbZNNEi\",\"type\":\"card\",\"data\":{\"card_name\":\"Master\",\"col\":4}},{\"id\":\"e2kDAJzSMC\",\"type\":\"card\",\"data\":{\"card_name\":\"Warehouse\",\"col\":4}},{\"id\":\"pkp1C4DknL\",\"type\":\"card\",\"data\":{\"card_name\":\"Transaction\",\"col\":4}},{\"id\":\"CyugRBZtFp\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":4}},{\"id\":\"grGIQKk3yK\",\"type\":\"card\",\"data\":{\"card_name\":\"Setting\",\"col\":4}}]",
  "creation": "2024-09-16 18:21:24.392738",
  "custom_blocks": [],
  "docstatus": 0,
@@ -27,25 +27,6 @@
    "label": "Warehouse",
    "link_count": 0,
    "link_to": "IMS Warehouse",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Transaction",
-   "link_count": 1,
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Stock Entry",
-   "link_count": 0,
-   "link_to": "IMS Stock Entry",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
@@ -127,9 +108,67 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Transaction",
+   "link_count": 2,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Stock Entry",
+   "link_count": 0,
+   "link_to": "IMS Stock Entry",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Stock Transaction Ledger",
+   "link_count": 0,
+   "link_to": "Stock Transaction Ledger",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Reports",
+   "link_count": 2,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Stock Maintenance Report",
+   "link_count": 0,
+   "link_to": "Stock Maintenance Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Stock Transation Report",
+   "link_count": 0,
+   "link_to": "Stock Transation Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2024-09-17 18:29:48.375618",
+ "modified": "2024-09-17 20:25:39.886431",
  "modified_by": "Administrator",
  "module": "Inventory Management System",
  "name": "Inventory Management System",

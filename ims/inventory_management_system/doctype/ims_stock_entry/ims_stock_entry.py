@@ -22,9 +22,11 @@ class IMSStockEntry(Document):
 
     def on_submit(self):
         self.update_ims_item_stock_level()
+        self.create_stock_entry()
     
     def on_cancel(self):
         self.cancel_ims_item_stock_level()
+        self.cancel_stock_entry()
 
     def validate_duplicate_data(self):
         items_table = self.get('items')
@@ -146,3 +148,44 @@ class IMSStockEntry(Document):
                 frappe.throw(_("Found multiple entries for same <b>Item Code.</b>"))
             item_code.add(item.item_code)
 
+    def create_stock_entry(self):
+        for item in self.items:
+            new_stock_entry = frappe.get_doc({
+                "doctype": "Stock Transaction Ledger",
+                "status": "Submitted",
+                "stock_entry_type": self.stock_entry_type,
+                "posting_date": self.posting_date,
+                "posting_time": self.posting_time,
+                "item_code": item.item_code,
+                "item_name": item.item_name,
+                "qty": item.qty,
+                "rate": item.rate,
+                "total_amount": item.total_amount,
+                "source_warehouse": item.source_warehouse,
+                "target_warehouse": item.target_warehouse
+            })
+            new_stock_entry.insert()
+            new_stock_entry.submit()
+
+        frappe.msgprint(_("Stock Entry created successfully in the Stock Transaction Ledger"))
+
+    def cancel_stock_entry(self):
+        for item in self.items:
+            stock_ledger_entry = frappe.get_doc({
+                "doctype": "Stock Transaction Ledger",
+                "status": "Cancelled",
+                "stock_entry_type": self.stock_entry_type,
+                "posting_date": self.posting_date,
+                "posting_time": self.posting_time,
+                "item_code": item.item_code,
+                "item_name": item.item_name,
+                "qty": -item.qty,
+                "rate": item.rate,
+                "total_amount": -item.total_amount,
+                "source_warehouse": item.source_warehouse,
+                "target_warehouse": item.target_warehouse
+            })
+            stock_ledger_entry.insert()
+            stock_ledger_entry.submit()
+
+        frappe.msgprint(_("Stock Entry cancelled, and corresponding negative entries created in Stock Transaction Ledger."))
