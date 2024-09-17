@@ -16,6 +16,7 @@
   "maintain_stock",
   "opening_stock",
   "valuation_rate",
+  "standard_rate",
   "description_section",
   "description"
  ],
@@ -23,23 +24,32 @@
   {
    "fieldname": "item_code",
    "fieldtype": "Data",
-   "label": "Item Code"
+   "in_list_view": 1,
+   "label": "Item Code",
+   "read_only": 1,
+   "reqd": 1
   },
   {
    "fieldname": "item_name",
    "fieldtype": "Data",
-   "label": "Item Name"
+   "in_list_view": 1,
+   "label": "Item Name",
+   "reqd": 1
   },
   {
    "fieldname": "item_group",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Item Group",
-   "options": "IMS Item Group"
+   "options": "IMS Item Group",
+   "reqd": 1
   },
   {
    "fieldname": "uom",
    "fieldtype": "Data",
-   "label": "UOM"
+   "in_list_view": 1,
+   "label": "UOM",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_xw0eb",
@@ -52,7 +62,7 @@
    "label": "Disabled"
   },
   {
-   "default": "0",
+   "default": "1",
    "fieldname": "maintain_stock",
    "fieldtype": "Check",
    "label": "Maintain Stock"
@@ -76,11 +86,16 @@
    "fieldname": "description",
    "fieldtype": "Text Editor",
    "label": "Description"
+  },
+  {
+   "fieldname": "standard_rate",
+   "fieldtype": "Currency",
+   "label": "Standard Rate"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-16 18:40:31.626493",
+ "modified": "2024-09-17 09:38:33.869168",
  "modified_by": "Administrator",
  "module": "Inventory Management System",
  "name": "IMS Item",

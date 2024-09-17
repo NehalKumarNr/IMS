@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "ITPR-.####",
  "creation": "2024-09-16 17:57:39.511236",
  "default_view": "List",
  "doctype": "DocType",
@@ -9,6 +10,9 @@
  "field_order": [
   "item_code",
   "uom",
+  "column_break_lidop",
+  "item_name",
+  "description",
   "price_list_section",
   "price_list",
   "currency",
@@ -23,8 +27,10 @@
   {
    "fieldname": "item_code",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Item code",
-   "options": "IMS Item"
+   "options": "IMS Item",
+   "reqd": 1
   },
   {
    "fieldname": "uom",
@@ -43,9 +49,11 @@
    "options": "IMS Price List"
   },
   {
+   "fetch_from": "price_list.currency",
    "fieldname": "currency",
    "fieldtype": "Data",
-   "label": "Currency"
+   "label": "Currency",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_yxlqu",
@@ -73,14 +81,33 @@
    "fieldname": "valid_upto",
    "fieldtype": "Date",
    "label": "Valid Upto"
+  },
+  {
+   "fieldname": "column_break_lidop",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "item_code.item_name",
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "label": "Item Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "item_code.description",
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "label": "Description ",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-16 18:49:47.660697",
+ "modified": "2024-09-17 10:07:48.352957",
  "modified_by": "Administrator",
  "module": "Inventory Management System",
  "name": "IMS Item Price",
+ "naming_rule": "Expression (old style)",
  "owner": "Administrator",
  "permissions": [
   {
