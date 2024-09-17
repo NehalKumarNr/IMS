@@ -103,7 +103,7 @@
    "hidden": 0,
    "is_query_report": 0,
    "label": "Setting",
-   "link_count": 1,
+   "link_count": 2,
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
@@ -117,9 +117,19 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Company",
+   "link_count": 0,
+   "link_to": "IMS Company",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2024-09-17 11:14:00.216577",
+ "modified": "2024-09-17 11:56:32.473392",
  "modified_by": "Administrator",
  "module": "Inventory Management System",
  "name": "Inventory Management System",

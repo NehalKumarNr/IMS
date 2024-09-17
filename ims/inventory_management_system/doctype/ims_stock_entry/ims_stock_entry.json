@@ -1,13 +1,13 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "STK-ENTY-.####",
  "creation": "2024-09-16 18:05:36.041375",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "series",
   "stock_entry_type",
   "column_break_sb2mw",
   "company",
@@ -18,14 +18,13 @@
   "section_break_ax1p0",
   "items",
   "section_break_fcqm3",
+  "qty",
+  "column_break_48ey7",
+  "total_amount",
+  "section_break_rtps8",
   "amended_from"
  ],
  "fields": [
-  {
-   "fieldname": "series",
-   "fieldtype": "Data",
-   "label": "Series"
-  },
   {
    "fieldname": "amended_from",
    "fieldtype": "Link",
@@ -39,8 +38,10 @@
   {
    "fieldname": "stock_entry_type",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Stock Entry Type",
-   "options": "Material Issue\nMaterial Transfer"
+   "options": "\nMaterial Issue\nMaterial Transfer",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_sb2mw",
@@ -53,22 +54,27 @@
    "options": "IMS Company"
   },
   {
+   "default": "Today",
    "fieldname": "posting_date",
    "fieldtype": "Date",
-   "label": "Posting Date"
+   "label": "Posting Date",
+   "read_only_depends_on": "eval:doc.edit_posting_date_and_time==0"
   },
   {
    "fieldname": "posting_time",
    "fieldtype": "Time",
-   "label": "Posting Time"
+   "label": "Posting Time",
+   "read_only_depends_on": "eval:doc.edit_posting_date_and_time==0"
   },
   {
    "fieldname": "column_break_ildhh",
    "fieldtype": "Column Break"
   },
   {
+   "default": "0",
+   "depends_on": "eval:doc.docstatus==0",
    "fieldname": "edit_posting_date_and_time",
-   "fieldtype": "Datetime",
+   "fieldtype": "Check",
    "label": "Edit Posting Date and Time"
   },
   {
@@ -80,20 +86,42 @@
    "fieldname": "items",
    "fieldtype": "Table",
    "label": "Items",
-   "options": "IMS Stock Entry Detail"
+   "options": "IMS Stock Entry Detail",
+   "reqd": 1
   },
   {
    "fieldname": "section_break_fcqm3",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "qty",
+   "fieldtype": "Float",
+   "label": "Qty",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_48ey7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "label": "Total Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_rtps8",
    "fieldtype": "Section Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-09-16 19:26:35.032766",
+ "modified": "2024-09-17 12:33:45.833639",
  "modified_by": "Administrator",
  "module": "Inventory Management System",
  "name": "IMS Stock Entry",
+ "naming_rule": "Expression (old style)",
  "owner": "Administrator",
  "permissions": [
   {

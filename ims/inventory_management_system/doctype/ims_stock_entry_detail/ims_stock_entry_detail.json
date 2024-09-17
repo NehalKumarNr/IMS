@@ -29,6 +29,7 @@
   {
    "fieldname": "source_warehouse",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Source Warehouse",
    "options": "IMS Warehouse"
   },
@@ -39,6 +40,7 @@
   {
    "fieldname": "target_warehouse",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Target Warehouse",
    "options": "IMS Warehouse"
   },
@@ -49,13 +51,16 @@
   {
    "fieldname": "item_code",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Item Code",
    "options": "IMS Item"
   },
   {
+   "fetch_from": "item_code.item_name",
    "fieldname": "item_name",
    "fieldtype": "Data",
-   "label": "Item Name"
+   "label": "Item Name",
+   "read_only": 1
   },
   {
    "fieldname": "description_section",
@@ -63,6 +68,7 @@
    "label": "Description"
   },
   {
+   "fetch_from": "item_code.description",
    "fieldname": "description",
    "fieldtype": "Text Editor",
    "label": "Description"
@@ -72,9 +78,11 @@
    "fieldtype": "Column Break"
   },
   {
+   "fetch_from": "item_code.item_group",
    "fieldname": "item_group",
    "fieldtype": "Data",
-   "label": "Item Group"
+   "label": "Item Group",
+   "read_only": 1
   },
   {
    "fieldname": "quantity_section",
@@ -82,8 +90,10 @@
    "label": "Quantity"
   },
   {
+   "default": "1",
    "fieldname": "qty",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Qty"
   },
   {
@@ -91,9 +101,11 @@
    "fieldtype": "Column Break"
   },
   {
+   "fetch_from": "item_code.uom",
    "fieldname": "uom",
    "fieldtype": "Data",
-   "label": "UOM"
+   "label": "UOM",
+   "read_only": 1
   },
   {
    "fieldname": "rate_section",
@@ -103,6 +115,7 @@
   {
    "fieldname": "rate",
    "fieldtype": "Currency",
+   "in_list_view": 1,
    "label": "Rate"
   },
   {
@@ -118,7 +131,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-09-16 19:16:54.957607",
+ "modified": "2024-09-17 12:10:40.328161",
  "modified_by": "Administrator",
  "module": "Inventory Management System",
  "name": "IMS Stock Entry Detail",

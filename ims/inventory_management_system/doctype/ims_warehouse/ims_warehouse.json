@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "field:warehouse_name",
  "creation": "2024-09-16 18:01:39.997093",
  "default_view": "List",
  "doctype": "DocType",
@@ -25,7 +26,10 @@
   {
    "fieldname": "warehouse_name",
    "fieldtype": "Data",
-   "label": "Warehouse Name"
+   "in_list_view": 1,
+   "label": "Warehouse Name",
+   "reqd": 1,
+   "unique": 1
   },
   {
    "default": "0",
@@ -94,17 +98,20 @@
   {
    "fieldname": "company",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Company",
-   "options": "IMS Company"
+   "options": "IMS Company",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_tree": 1,
  "links": [],
- "modified": "2024-09-16 19:01:39.893126",
+ "modified": "2024-09-17 11:43:02.772260",
  "modified_by": "Administrator",
  "module": "Inventory Management System",
  "name": "IMS Warehouse",
+ "naming_rule": "By fieldname",
  "nsm_parent_field": "parent_ims_warehouse",
  "owner": "Administrator",
  "permissions": [
