@@ -3,7 +3,7 @@
  "allow_rename": 1,
  "autoname": "field:warehouse_name",
  "creation": "2024-09-16 18:01:39.997093",
- "default_view": "List",
+ "default_view": "Tree",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
@@ -11,16 +11,14 @@
   "disabled",
   "warehouse_name",
   "section_break_sc5zr",
-  "is_group_warehouse",
-  "parent_warehouse",
+  "is_group",
+  "parent_ims_warehouse",
   "column_break_ojeve",
   "company",
   "section_break_7wtlb",
   "lft",
   "rgt",
-  "is_group",
-  "old_parent",
-  "parent_ims_warehouse"
+  "old_parent"
  ],
  "fields": [
   {
@@ -57,7 +55,8 @@
    "default": "0",
    "fieldname": "is_group",
    "fieldtype": "Check",
-   "label": "Is Group"
+   "label": "Is Group",
+   "read_only_depends_on": "eval:!doc.__islocal"
   },
   {
    "fieldname": "old_parent",
@@ -68,24 +67,12 @@
   {
    "fieldname": "parent_ims_warehouse",
    "fieldtype": "Link",
-   "label": "Parent IMS Warehouse",
+   "label": "Parent Warehouse",
    "options": "IMS Warehouse"
   },
   {
    "fieldname": "section_break_sc5zr",
    "fieldtype": "Section Break"
-  },
-  {
-   "default": "0",
-   "fieldname": "is_group_warehouse",
-   "fieldtype": "Check",
-   "label": "Is Group Warehouse"
-  },
-  {
-   "fieldname": "parent_warehouse",
-   "fieldtype": "Link",
-   "label": "Parent Warehouse",
-   "options": "IMS Warehouse"
   },
   {
    "fieldname": "section_break_7wtlb",
@@ -107,7 +94,7 @@
  "index_web_pages_for_search": 1,
  "is_tree": 1,
  "links": [],
- "modified": "2024-09-17 11:43:02.772260",
+ "modified": "2024-09-17 15:54:09.241974",
  "modified_by": "Administrator",
  "module": "Inventory Management System",
  "name": "IMS Warehouse",
