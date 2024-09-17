@@ -92,7 +92,7 @@
   {
    "default": "0",
    "fieldname": "qty",
-   "fieldtype": "Data",
+   "fieldtype": "Float",
    "in_list_view": 1,
    "label": "Qty"
   },
@@ -133,7 +133,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-09-17 13:19:11.014316",
+ "modified": "2024-09-17 18:20:03.863151",
  "modified_by": "Administrator",
  "module": "Inventory Management System",
  "name": "IMS Stock Entry Detail",

@@ -13,8 +13,6 @@
   "section_break_sc5zr",
   "is_group",
   "parent_ims_warehouse",
-  "column_break_ojeve",
-  "company",
   "section_break_7wtlb",
   "lft",
   "rgt",
@@ -77,24 +75,12 @@
   {
    "fieldname": "section_break_7wtlb",
    "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "column_break_ojeve",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "company",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Company",
-   "options": "IMS Company",
-   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_tree": 1,
  "links": [],
- "modified": "2024-09-17 15:54:09.241974",
+ "modified": "2024-09-17 18:29:03.029877",
  "modified_by": "Administrator",
  "module": "Inventory Management System",
  "name": "IMS Warehouse",

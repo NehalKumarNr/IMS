@@ -18,7 +18,9 @@
   "valuation_rate",
   "standard_rate",
   "description_section",
-  "description"
+  "description",
+  "section_break_wkkbz",
+  "stock_level"
  ],
  "fields": [
   {
@@ -97,11 +99,22 @@
    "fieldname": "standard_rate",
    "fieldtype": "Currency",
    "label": "Standard Rate"
+  },
+  {
+   "fieldname": "stock_level",
+   "fieldtype": "Table",
+   "label": "Stock Level",
+   "options": "Stock Level",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_wkkbz",
+   "fieldtype": "Section Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-17 15:23:20.551027",
+ "modified": "2024-09-17 18:12:55.606772",
  "modified_by": "Administrator",
  "module": "Inventory Management System",
  "name": "IMS Item",
