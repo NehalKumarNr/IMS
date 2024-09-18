@@ -9,7 +9,7 @@
  "filters": [],
  "idx": 0,
  "is_standard": "Yes",
- "modified": "2024-09-17 20:22:34.693891",
+ "modified": "2024-09-18 11:38:06.809910",
  "modified_by": "Administrator",
  "module": "Inventory Management System",
  "name": "Stock Maintenance Report",
@@ -22,6 +22,9 @@
  "roles": [
   {
    "role": "System Manager"
+  },
+  {
+   "role": "IMS Admin"
   }
  ]
 }

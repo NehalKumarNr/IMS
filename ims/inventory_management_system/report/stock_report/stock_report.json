@@ -32,7 +32,7 @@
  ],
  "idx": 0,
  "is_standard": "Yes",
- "modified": "2024-09-18 09:55:54.956458",
+ "modified": "2024-09-18 11:38:19.625576",
  "modified_by": "Administrator",
  "module": "Inventory Management System",
  "name": "Stock Report",
@@ -45,6 +45,9 @@
  "roles": [
   {
    "role": "System Manager"
+  },
+  {
+   "role": "IMS Admin"
   }
  ]
 }

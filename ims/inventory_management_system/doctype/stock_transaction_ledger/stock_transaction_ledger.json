@@ -80,7 +80,7 @@
  "in_create": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-17 19:37:42.110227",
+ "modified": "2024-09-18 11:31:32.535644",
  "modified_by": "Administrator",
  "module": "Inventory Management System",
  "name": "Stock Transaction Ledger",
@@ -89,7 +89,6 @@
  "permissions": [
   {
    "create": 1,
-   "delete": 1,
    "email": 1,
    "export": 1,
    "print": 1,

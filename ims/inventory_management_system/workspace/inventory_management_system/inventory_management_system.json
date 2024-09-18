@@ -178,7 +178,7 @@
    "type": "Link"
   }
  ],
- "modified": "2024-09-18 09:51:15.658099",
+ "modified": "2024-09-18 11:38:56.002256",
  "modified_by": "Administrator",
  "module": "Inventory Management System",
  "name": "Inventory Management System",
@@ -187,7 +187,14 @@
  "parent_page": "",
  "public": 1,
  "quick_lists": [],
- "roles": [],
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "IMS Admin"
+  }
+ ],
  "sequence_id": 23.0,
  "shortcuts": [],
  "title": "Inventory Management System"
