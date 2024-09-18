@@ -1,0 +1,138 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-09-16 17:56:27.602721",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "item_code",
+  "item_name",
+  "item_group",
+  "uom",
+  "column_break_xw0eb",
+  "disabled",
+  "maintain_stock",
+  "opening_stock",
+  "valuation_rate",
+  "standard_rate",
+  "description_section",
+  "description",
+  "section_break_wkkbz",
+  "stock_level"
+ ],
+ "fields": [
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Item Code",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Item Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "item_group",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Item Group",
+   "options": "IMS Item Group",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "item_group.uom",
+   "fieldname": "uom",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "UOM",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_xw0eb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "disabled",
+   "fieldtype": "Check",
+   "label": "Disabled"
+  },
+  {
+   "default": "1",
+   "fieldname": "maintain_stock",
+   "fieldtype": "Check",
+   "label": "Maintain Stock",
+   "read_only_depends_on": "eval:!doc.__islocal"
+  },
+  {
+   "depends_on": "eval:(doc.__islocal&&doc.maintain_stock)",
+   "fieldname": "opening_stock",
+   "fieldtype": "Float",
+   "label": "Opening Stock"
+  },
+  {
+   "fieldname": "valuation_rate",
+   "fieldtype": "Currency",
+   "label": "Valuation Rate"
+  },
+  {
+   "fieldname": "description_section",
+   "fieldtype": "Section Break",
+   "label": "Description"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "label": "Description"
+  },
+  {
+   "depends_on": "eval:doc.__islocal",
+   "fieldname": "standard_rate",
+   "fieldtype": "Currency",
+   "label": "Standard Rate"
+  },
+  {
+   "fieldname": "stock_level",
+   "fieldtype": "Table",
+   "label": "Stock Level",
+   "options": "Stock Level",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_wkkbz",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-09-18 17:33:18.146029",
+ "modified_by": "Administrator",
+ "module": "Inventory Management System",
+ "name": "IMS Item",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,105 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "STK-LED-.####",
+ "creation": "2024-09-17 18:37:03.898909",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "stock_entry_type",
+  "status",
+  "posting_date",
+  "posting_time",
+  "source_warehouse",
+  "target_warehouse",
+  "item_code",
+  "item_name",
+  "qty",
+  "rate",
+  "total_amount"
+ ],
+ "fields": [
+  {
+   "fieldname": "source_warehouse",
+   "fieldtype": "Data",
+   "label": "Source Warehouse"
+  },
+  {
+   "fieldname": "target_warehouse",
+   "fieldtype": "Data",
+   "label": "Target Warehouse"
+  },
+  {
+   "fieldname": "stock_entry_type",
+   "fieldtype": "Data",
+   "label": "Stock Entry Type"
+  },
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Data",
+   "label": "Item Code"
+  },
+  {
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "label": "Item Name"
+  },
+  {
+   "fieldname": "qty",
+   "fieldtype": "Float",
+   "label": "Qty"
+  },
+  {
+   "fieldname": "rate",
+   "fieldtype": "Currency",
+   "label": "Rate"
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "label": "Total Amount"
+  },
+  {
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date"
+  },
+  {
+   "fieldname": "posting_time",
+   "fieldtype": "Time",
+   "label": "Posting Time"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Data",
+   "label": "Status"
+  }
+ ],
+ "in_create": 1,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-09-18 11:31:32.535644",
+ "modified_by": "Administrator",
+ "module": "Inventory Management System",
+ "name": "Stock Transaction Ledger",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
