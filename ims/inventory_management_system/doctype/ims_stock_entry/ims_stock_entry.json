@@ -25,16 +25,6 @@
  ],
  "fields": [
   {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "IMS Stock Entry",
-   "print_hide": 1,
-   "read_only": 1,
-   "search_index": 1
-  },
-  {
    "fieldname": "stock_entry_type",
    "fieldtype": "Select",
    "in_list_view": 1,
@@ -105,12 +95,22 @@
   {
    "fieldname": "section_break_rtps8",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "IMS Stock Entry",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-09-17 18:26:12.903774",
+ "modified": "2024-09-18 12:37:59.070002",
  "modified_by": "Administrator",
  "module": "Inventory Management System",
  "name": "IMS Stock Entry",
