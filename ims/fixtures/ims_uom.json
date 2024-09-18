@@ -1486,13 +1486,6 @@
  {
   "docstatus": 0,
   "doctype": "IMS UOM",
-  "modified": "2024-09-17 13:55:42.489867",
-  "name": "Vara",
-  "uom_name": "Vara"
- },
- {
-  "docstatus": 0,
-  "doctype": "IMS UOM",
   "modified": "2024-09-17 13:55:42.501777",
   "name": "Rod",
   "uom_name": "Rod"
