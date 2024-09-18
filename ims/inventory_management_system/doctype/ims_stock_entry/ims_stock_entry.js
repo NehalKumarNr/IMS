@@ -21,5 +21,13 @@ frappe.ui.form.on('IMS Stock Entry Detail', {
 		let row = locals[cdt][cdn];
 		let total_amount = (row.qty || 0) * (row.rate || 0);
 		frappe.model.set_value(cdt, cdn, 'total_amount', total_amount);
+		frappe.call({
+			method: 'ims.inventory_management_system.doctype.ims_stock_entry.ims_stock_entry.item_rate',
+			args: {item_code: row.item_code},
+			callback: function(r) {
+				frappe.model.set_value(cdt, cdn, 'rate', r.message);
+			}
+		})
+
 	}
 });

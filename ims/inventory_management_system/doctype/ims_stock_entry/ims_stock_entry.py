@@ -5,6 +5,7 @@ import frappe
 from frappe.model.document import Document
 from frappe.utils import flt
 from frappe import _
+from datetime import datetime, date
 
 class IMSStockEntry(Document):
     def before_save(self):
@@ -189,3 +190,21 @@ class IMSStockEntry(Document):
             stock_ledger_entry.submit()
 
         frappe.msgprint(_("Stock Entry cancelled, and corresponding negative entries created in Stock Transaction Ledger."))
+
+@frappe.whitelist()
+def item_rate(item_code):
+    current_date = date.today()
+    current_date = current_date.strftime("%Y-%m-%d")
+    item_price = frappe.get_all("IMS Item Price", filters = {"item_code": item_code}, fields=["rate", "valid_from", "valid_upto"])
+    if item_price:
+        for ele in item_price:
+            if (not ele["valid_from"]) or (not ele["valid_upto"]):
+                frappe.throw(_("Date Validation in <b>IMS Item Price</b> is not there."))
+            valid_from = ele["valid_from"].strftime("%Y-%m-%d")
+            valid_upto = ele["valid_upto"].strftime("%Y-%m-%d")
+            if current_date >= valid_from and current_date <= valid_upto:
+                return ele["rate"]
+    else:
+        item_price_rate = frappe.get_all("IMS Item", filters = {"item_code": item_code}, fields=["valuation_rate"])
+        if item_price_rate:
+            return item_price_rate[0]["valuation_rate"]
