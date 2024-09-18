@@ -83,16 +83,6 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "UOM",
-   "link_count": 0,
-   "link_to": "IMS UOM",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
    "label": "Setting",
    "link_count": 1,
    "link_type": "DocType",
