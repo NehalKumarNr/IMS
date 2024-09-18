@@ -4,6 +4,7 @@
 import frappe
 from frappe.model.document import Document
 from frappe.model.naming import make_autoname
+from datetime import datetime, date, timedelta
 from frappe.utils import (
     cint,
     cstr,
@@ -32,6 +33,8 @@ class IMSItem(Document):
         price_list = frappe.db.get_single_value('IMS Setting', 'price_list')
         if self.disabled==0:
             if price_list:
+                current_date = date.today()
+                valid_upto_date = current_date + timedelta(days=30)
                 item_price = frappe.get_doc(
                     {
                         "doctype": "IMS Item Price",
@@ -39,6 +42,8 @@ class IMSItem(Document):
                         "item_code": self.name,
                         "uom": self.uom,
                         "rate": self.standard_rate,
+                        "valid_from": current_date,
+                        "valid_upto": valid_upto_date
                     }
                 )
                 item_price.insert()

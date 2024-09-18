@@ -73,7 +73,8 @@
   {
    "fieldname": "valid_from",
    "fieldtype": "Date",
-   "label": "Valid From"
+   "label": "Valid From",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_cezyd",
@@ -82,7 +83,8 @@
   {
    "fieldname": "valid_upto",
    "fieldtype": "Date",
-   "label": "Valid Upto"
+   "label": "Valid Upto",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_lidop",
@@ -105,7 +107,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-17 13:38:43.238383",
+ "modified": "2024-09-18 11:16:59.532372",
  "modified_by": "Administrator",
  "module": "Inventory Management System",
  "name": "IMS Item Price",
